@@ -1,5 +1,10 @@
-h1 Create a new user
+extends ../layouts/common.pug
+block content
+	.container.d-flex.justify-content-center.align-items-center
+		.wrapper.mt-5.p-5.border.border-success.w-50(style="background-color: #f5f9ff")
+			h1(class="text-center")
+				span(class="badge w-100 badge-success") Create a new user
 
-form(action="/users/create/", method="POST")
- input(name="name", type="text")
- button Create
+			form(action="/users/create/", method="POST")
+				input(name="name", type="text", class="form-control mt-3 mr-3 w-75 d-inline")
+				button(class="btn btn-success mb-2 mr-2") Create
