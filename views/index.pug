@@ -1,4 +1,11 @@
+
+form(action="/users/search/", method="GET")
+ input(type="text", name="q")
+ button Search 
+a(href="/users/create") New User 
 ul
- each user in users
-  li= user.name +  user.age
-  
+ each user in users 
+  li
+   span= user.name
+   span &nbsp;
+   a(href="/users/" + user.id) View Profile
