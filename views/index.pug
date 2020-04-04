@@ -1,23 +1,25 @@
 extends ../layouts/common.pug
 block content
   .container.d-flex.justify-content-center.align-items-center
-    .wrapper.mt-5.w-50.border.border-primary(style="background-color: #f5f9ff")
+    .wrapper.mt-5.mb-4.border.border-primary.w-75.pb-5(style="background-color: #f5f9ff")
       form(action="/users/search/", method="GET" class="d-inline")
        h1(class="text-center mt-5")
         span(class="badge w-75 badge-primary") List Users
-       input(type="text", name="q", class="form-control mb-5 mt-5 ml-5 mr-3 w-50 d-inline")
-       button(class="btn btn-primary ml-3 mr-2 mb-1") Search
-      a(href="/users/create" class="btn btn-primary mb-1") New User
-      
-      table.table
-       tr 
-        th Name
-        th Phone
-        th Actions
+        .wrapper.d-flex.align-items-center.w-75.m-auto
+         input(type="text", name="q", class="form-control mb-5 mt-5  mr-3 w-50 d-inline")
+         button(class="btn btn-primary ml-3 mr-2 mb-1 mr-auto ") Search
+         h2(class="mr-2") User
+         a(href="/users/create" class="btn btn-primary mb-1") New User
+        
+        table.table.w-75.m-auto.text-center.border
+         tr 
+          th Name
+          th Phone
+          th Actions
 
-       each user in users
-        tr
-         td= user.name
-         td= user.phone
-         td
-          a.btn.btn-secondary(href="/users/" + user.id) View Profile
+         each user in users
+          tr
+           td= user.name
+           td= user.phone
+           td
+            a.btn.btn-secondary(href="/users/" + user.id) View Profile

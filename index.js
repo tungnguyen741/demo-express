@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 //Use Pug
 app.set('view engine', 'pug');
 app.set('views', 'C:\\xampp\\htdocs\\demo_ExpressJs\\demo-express\\views');
-
+//Use Routes
 app.use('/users', userRoute);
 
 app.listen(8080, (req, res) => {
