@@ -23,7 +23,8 @@ module.exports.viewProfile =  (req, res)=>{
   res.render('viewProfile',{users: user});
 };
 
-module.exports.postCreate = (req, res) => {
+module.exports.postCreate = (req, res) => { 
+    console.log(res.locals); // from middleware validate
     req.body.id = shortid.generate();
     db.get('data').push(req.body).write();
     res.redirect('/users');

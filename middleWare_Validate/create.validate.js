@@ -11,7 +11,8 @@ module.exports.postCreate = (req, res, next)=>{
       res.render('create',{ errors: errors, values: req.body })
       return;
     }
-    
+    //variable for middleware continue can use
+    res.locals.success = true;
     //active middleware continue
     next();
 }
