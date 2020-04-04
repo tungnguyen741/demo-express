@@ -5,6 +5,13 @@ block content
 			h1(class="text-center")
 				span(class="badge w-100 badge-success") Create a new user
 
-			form(action="/users/create/", method="POST")
-				input(name="name", type="text", class="form-control mt-3 mr-3 w-75 d-inline")
-				button(class="btn btn-success mb-2 mr-2") Create
+			if errors
+				each error in errors
+					.alert.alert-danger= error
+			form(action="/users/create", method="POST")
+				label(for="name", class="d-block font-weight-bold mt-5") Name
+				input#name(name="name", type="text", class="form-control mb-3 mr-3 w-75 d-inline", value=values ? values.name:'')
+				
+				label(for="phone", class="d-block font-weight-bold m-0") Phone
+				input#phone(name="phone", type="text", class="form-control mb-3 mr-3 w-75 d-inline", value=values ? values.phone:"")
+				button(class="btn btn-success mb-2 mr-2") Create Phone

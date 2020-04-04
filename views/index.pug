@@ -4,13 +4,20 @@ block content
     .wrapper.mt-5.w-50.border.border-primary(style="background-color: #f5f9ff")
       form(action="/users/search/", method="GET" class="d-inline")
        h1(class="text-center mt-5")
-        span(class="badge w-75 badge-primary") List User
+        span(class="badge w-75 badge-primary") List Users
        input(type="text", name="q", class="form-control mb-5 mt-5 ml-5 mr-3 w-50 d-inline")
-       button(class="btn btn-primary ml-3 mr-2 mb-1") Search 
+       button(class="btn btn-primary ml-3 mr-2 mb-1") Search
       a(href="/users/create" class="btn btn-primary mb-1") New User
-      ul
-       each user in users 
-        li
-         span= user.name
-         span &nbsp;
-         a(href="/users/" + user.id) View Profile
+      
+      table.table
+       tr 
+        th Name
+        th Phone
+        th Actions
+
+       each user in users
+        tr
+         td= user.name
+         td= user.phone
+         td
+          a.btn.btn-secondary(href="/users/" + user.id) View Profile

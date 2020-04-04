@@ -4,6 +4,10 @@ block content
 		.wrapper.mt-5.w-50.border.border-danger.p-3.pt-5(style="background-color: #fcf5ff")
 			h1(class="text-center")
 				span(class="badge w-75 badge-danger") View Profile
-				.w-100.pb-5.mb-5.mt-3
-					b Name: 
-					span= users.name
+				.w-100.pb-5.mb-5.mt-3.text-left
+					.info
+						b Name: 
+						span= users.name
+					.info.mt-3
+						b Phone: 
+						span= users.phone
