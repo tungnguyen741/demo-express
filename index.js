@@ -13,7 +13,8 @@ app.set('view engine', 'pug');
 app.set('views', 'C:\\xampp\\htdocs\\demo_ExpressJs\\demo-express\\views');
 //Use Routes
 app.use('/users', userRoute);
-
+//Use static file
+app.use(express.static('./public'))
 app.listen(8080, (req, res) => {
     console.log('ok fine');
 });
